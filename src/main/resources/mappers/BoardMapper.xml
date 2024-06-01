@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace에는 연결할 인터페이스의 풀네임 -->
+<!-- 설정파일에 매퍼 등록 -->
+<mapper namespace="com.study.chap01.mapper.BoardMapper">
+
+
+
+</mapper>
