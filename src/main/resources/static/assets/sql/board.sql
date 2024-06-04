@@ -7,3 +7,5 @@ CREATE TABLE tbl_board (
         view_count INT(8) DEFAULT 0,
         reg_date_time DATETIME DEFAULT current_timestamp
         );
+
+SELECT * FROM tbl_board;
