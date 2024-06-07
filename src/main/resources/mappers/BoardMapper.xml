@@ -7,6 +7,24 @@
 <!-- 설정파일에 매퍼 등록 -->
 <mapper namespace="com.study.chap01.mapper.BoardMapper">
 
+    <insert id="save">
+        INSERT INTO tbl_board
+            (title, content, writer, account)
+        VALUES
+            (#{title}, #{content}, #{writer}, #{account})
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM tbl_board
+        WHERE board_no = #{boardNo}
+    </delete>
+
+    // 게시물 목록조회
+    List<Board> findAll();
+
+    // 게시물 상세조회
+    Board findOne(int boardNo);
+
 
 
 </mapper>

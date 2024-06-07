@@ -3,6 +3,8 @@ package com.study.chap01.mapper;
 import com.study.chap01.entity.Board;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface BoardMapper {
 
@@ -13,8 +15,10 @@ public interface BoardMapper {
     boolean delete(int boardNo);
 
     // 게시물 목록조회
+    List<Board> findAll();
 
     // 게시물 상세조회
+    Board findOne(int boardNo);
 
 
 
