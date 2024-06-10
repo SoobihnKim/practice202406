@@ -19,11 +19,7 @@
         WHERE board_no = #{boardNo}
     </delete>
 
-    // 게시물 목록조회
-    List<Board> findAll();
 
-    // 게시물 상세조회
-    Board findOne(int boardNo);
 
 
 

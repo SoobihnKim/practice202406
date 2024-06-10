@@ -14,7 +14,7 @@ public class Board {
     private int boardNo;
     private String title;
     private String content;
-    private String author;
+    private String writer;
     private int viewCount;
     private LocalDateTime createTime;
 

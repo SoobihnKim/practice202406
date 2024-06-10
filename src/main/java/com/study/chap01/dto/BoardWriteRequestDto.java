@@ -16,9 +16,9 @@ public class BoardWriteRequestDto {
 
     public Board toEntity() {
         Board b = new Board();
-        b.setTitle(title);
-        b.setContent(content);
-        b.setAuthor(writer);
+        b.setTitle(this.title);
+        b.setContent(this.content);
+        b.setWriter(this.writer);
         return b;
     }
 }

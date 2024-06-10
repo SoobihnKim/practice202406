@@ -1,13 +1,18 @@
 package com.study.chap01.controller;
 
+import com.study.chap01.dto.BoardListResponseDto;
 import com.study.chap01.dto.BoardWriteRequestDto;
 import com.study.chap01.entity.Board;
 import com.study.chap01.mapper.BoardMapper;
 import com.study.chap01.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping("/board")
@@ -16,6 +21,21 @@ public class BoardController {
 
     private final BoardService boardService;
     private final BoardMapper boardMapper;
+
+    // 목록 조회 요청(/board/list : GET)
+    @GetMapping("/list")
+    public String list(Model model) {
+        List<Board> boardList = boardMapper.findAll();
+
+        List<BoardListResponseDto> bList = new ArrayList<>();
+        for (Board b : boardList) {
+            BoardListResponseDto dto = new BoardListResponseDto(b);
+            bList.add(dto);
+        }
+        model.addAttribute("bList", bList);
+
+        return "board/list";
+    }
 
     // 게시글 쓰기 양식 화면 열기 요청(/board/write : GET)
     @GetMapping("/write")
