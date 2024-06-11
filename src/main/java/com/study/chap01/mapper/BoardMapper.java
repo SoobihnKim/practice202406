@@ -20,6 +20,9 @@ public interface BoardMapper {
     // 게시물 상세조회
     Board findOne(int boardNo);
 
+    // 조회수 상승
+    void upViewCount(int boardNo);
+
 
 
 }

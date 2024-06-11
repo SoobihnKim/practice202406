@@ -1,5 +1,6 @@
 package com.study.chap01.controller;
 
+import com.study.chap01.dto.BoardDetailResponseDto;
 import com.study.chap01.dto.BoardListResponseDto;
 import com.study.chap01.dto.BoardWriteRequestDto;
 import com.study.chap01.entity.Board;
@@ -54,6 +55,31 @@ public class BoardController {
         boardMapper.save(b);
 
         return "board/";
+    }
+
+    // 게시글 상세조회 요청(/board/detail : GET)
+    @GetMapping("/detail")
+    public String detail(int bno, Model model) {
+        System.out.println("/board/detail GET!");
+        System.out.println("bno = " + bno);
+
+        Board b = boardMapper.findOne(bno);
+
+        if(b != null) boardMapper.upViewCount(bno);
+
+        model.addAttribute("bbb", new BoardDetailResponseDto(b));
+
+        return "board/detail";
+    }
+
+    // 게시글 삭제(/board/delete: GET)
+    @GetMapping("/delete")
+    public String delete(int bno) {
+        System.out.println("/board/delete GET!");
+
+        boardMapper.delete(bno);
+
+        return  "redirect:/board/list";
     }
 
 

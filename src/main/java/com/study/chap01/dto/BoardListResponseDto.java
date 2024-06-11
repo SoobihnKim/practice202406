@@ -12,6 +12,7 @@ import java.time.format.DateTimeFormatter;
 @Getter
 public class BoardListResponseDto {
 
+    private int bno;
     private String shortTitle;
     private String shortContent;
     private String date;
@@ -19,6 +20,7 @@ public class BoardListResponseDto {
 
     // 엔터티를 DTO로 변환하는 생성자
     public BoardListResponseDto(Board b) {
+        this.bno = b.getBoardNo();
         this.shortTitle = makeShortTitle(b.getTitle());
         this.shortContent = makeShortContent(b.getContent());
         this.date = dateFormatting(b.getCreateTime());
