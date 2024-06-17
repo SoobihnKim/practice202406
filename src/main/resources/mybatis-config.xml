@@ -15,7 +15,7 @@
 <!--        <typeAlias type="com.study.springstudy.springmvc.chap03.entity.Score" alias="score" />-->
         <typeAlias type="com.study.chap01.entity.Board" alias="board" />
 <!--        <typeAlias type="com.study.springstudy.springmvc.chap05.entity.Reply" alias="reply" />-->
-<!--        <typeAlias type="com.study.springstudy.springmvc.chap05.entity.Member" alias="member" />-->
+        <typeAlias type="com.study.springstudy.springmvc.chap05.entity.Member" alias="member" />
     </typeAliases>
 
 
